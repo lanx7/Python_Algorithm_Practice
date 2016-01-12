@@ -1,15 +1,9 @@
 __author__ = 'lanx'
 
 # Select r items in n
-def permutation(n, r):
-    answer = []
-    select(n, r, answer)
-    for idx, a in enumerate(answer):
-        print idx+1, a
-
-def select(n, r, answer, picked=[]):
+def permutation(n, r, answer, picked=[]):
     if len(picked) >= r:
-        answer.append(list(picked))
+        answer.append(list(picked)) # Need to deep-copy the list
         #print picked
         return False
 
@@ -17,13 +11,32 @@ def select(n, r, answer, picked=[]):
         if i in picked:
             continue
         picked.append(i)
-        flag = select(n, r, answer, picked)
+        flag = permutation(n, r, answer, picked)
         picked.pop()
 
+def combination(n, r, answer, picked=set()):
+    if len(picked) >= r:
+        if picked not in answer:
+            answer.append(set(picked)) # Need to deep-copy the list
+            #print picked
+            return False
+        else:
+            return False
 
+    for i in range(n):
+        if i in picked:
+            continue
+        picked.add(i)
+        flag = combination(n, r, answer, picked)
+        picked.pop()
 
-def combination(n, r):
-    answer = []
+answer = []
+permutation(5,3, answer)
+for idx, a in enumerate(answer):
+    print idx+1, a
 
-permutation(4,3)
-combination(3,2)
+answer_c = []
+combination(5,3, answer_c)
+for idx, a in enumerate(answer_c):
+    print idx+1, a
+
