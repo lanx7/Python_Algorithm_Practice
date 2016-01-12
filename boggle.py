@@ -60,11 +60,11 @@ def hasword(x, y, word, level=0, all=False):
 
     for i in xrange(8):
         #print answer
-        result = hasword(x+dx[i], y+dy[i], word, level+1)
+        result = hasword(x+dx[i], y+dy[i], word, level+1,all)
         answer.pop()
         answer_xy.pop()
         if all == True and result == True:
-            break
+            return result
 
 
     return result
@@ -72,4 +72,6 @@ def hasword(x, y, word, level=0, all=False):
 b = init_boggle()
 print_board(b)
 
-print hasword(0,1, 'RRET')
+print hasword(0,1, 'RRET', 0, True) # one answer
+#print hasword(0,1, 'RRET', 0, False) # all answers
+
