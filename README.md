@@ -8,4 +8,5 @@ Python Algorithm Practice
 2. Permutation & Combination (Exhastive Search)
 
 
-
+3. Alphabet Calculus
+ * Given GOOD + BAD = SOSO, Find the number correspond to the characters. 
