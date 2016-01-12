@@ -15,10 +15,15 @@ def init_boggle(static=0):
 dx = [-1, 0, 1, -1, 1, -1, 0, 1]
 dy = [-1, -1, -1, 0, 0, 1, 1, 1]
 level = 0
-answer = ''
+answer = []
 answer_xy = []
 
-def print_board(answer, answer_xy):
+def print_board(board):
+    for line in board:
+        print line
+
+
+def print_answer(answer, answer_xy):
     init_char = '*'
     pboard = []
     str = []
@@ -32,38 +37,39 @@ def print_board(answer, answer_xy):
         #print idx, point[0], point[1]
         x = point[0]; y = point[1]
         pboard[x][y] = answer[idx]
+    print_board(pboard)
 
-    for line in pboard:
-        print line
-
-def hasword(x, y, word, level=0):
+def hasword(x, y, word, level=0, all=False):
     global answer
     result = False
     #print b[x][y]
+    answer.append(b[x][y])
+    answer_xy.append((x,y))
+
     if(x > 5 or y > 5):
         return False
 
     if(b[x][y] != word[level]):
         return False
 
-    answer = answer + (b[x][y])
-    answer_xy.append((x,y))
-    if answer == word:
+    if "".join(answer) == word:
         print 'Found answer: %s' % answer
         #print 'Co', answer_xy
-        print_board(answer, answer_xy)
+        print_answer(answer, answer_xy)
         return True
 
     for i in xrange(8):
+        #print answer
         result = hasword(x+dx[i], y+dy[i], word, level+1)
-        if result == True:
+        answer.pop()
+        answer_xy.pop()
+        if all == True and result == True:
             break
 
 
     return result
 
 b = init_boggle()
-for i in b:
-    print i
+print_board(b)
 
-print hasword(0,1, 'RRE')
+print hasword(0,1, 'RRET')
