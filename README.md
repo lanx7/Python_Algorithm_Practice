@@ -22,3 +22,5 @@ Python Algorithm Practice
 	Case2: ...
 
  * Output 
+
+5. Window Test
