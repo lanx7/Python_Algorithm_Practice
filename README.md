@@ -24,3 +24,11 @@ Python Algorithm Practice
  * Output 
 
 5. BOARD COVER
+ Fill white spaces in the board with 'L'shape blocks
+ * INPUT:
+    - Number of Test Case
+    - Height, Width
+    - Shape of Board (# -> Block, . --> White)
+ * Output
+    - Number of answers
+
