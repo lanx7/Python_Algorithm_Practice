@@ -1,18 +1,18 @@
 # Python_Algorithm_Practice
 Python Algorithm Practice 
 
-1. BOGGLE GAME (EXHAUSTIVE SEARCH)
+1. BOGGLE GAME (Exhaustive Search)
  * Learn how to implement exhastive search with recursive call
  * Need to use Push and Pop for finding all answers. (Python list provides pop method) 
 
-2. Permutation & Combination (Exhastive Search)
+2. Permutation & Combination (Exhaustive Search)
 
 
-3. Alphabet Calculus
+3. Alphabet Calculus (Exhaustive Search)
  * Given GOOD + BAD = SOSO, Find the number correspond to the characters. 
 
 
-4. PICNIC
+4. PICNIC (Exhaustive Search)
  * Make the given students in pairs. 
  * Two students in a pair should be friends
  * Input:picnic_input.txt
@@ -23,4 +23,4 @@ Python Algorithm Practice
 
  * Output 
 
-5. Window Test
+5. BOARD COVER

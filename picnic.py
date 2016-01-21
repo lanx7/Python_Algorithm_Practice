@@ -1,3 +1,4 @@
+# Select a person in each recursive call
 
 def check_friends(picked, friends):
     idx = 0
@@ -11,13 +12,25 @@ def check_friends(picked, friends):
 
     return True
 
-
+final = []
 def pick(picked, total, friends, num_answer):
     if len(picked) >= total:
-        if check_friends(picked, friends) == True:
-            print "Found Answer: ", picked
-            num_answer[0] = num_answer[0] + 1
-        return False
+        #if check_friends(picked, friends) == True:
+        candidate = set()
+        size_pairs = len(picked)/2
+        for i in range(size_pairs):
+            num1 = picked[i*2]
+            num2 = picked[i*2+1]
+            a = frozenset([num1,num2])
+            if a not in friends:
+                return False
+            candidate.add(a)
+        if candidate in final:
+            return False
+        print "Found Answer: ", candidate
+        final.append(candidate)
+        num_answer[0] = num_answer[0] + 1
+        #return False
 
     for i in range(total):
         if i in picked:
@@ -33,7 +46,7 @@ with open('picnic_input.dat','r') as f:
     num = int(line)
 
     for i in xrange(1, num+1):
-        print "Case %d" % i
+        print "\nCase %d" % i
         line = f.readline().strip()
         tokens = line.split(" ")
         tot = int(tokens[0])
@@ -53,6 +66,6 @@ with open('picnic_input.dat','r') as f:
         answer = []
         num_answer = [0]
         pick(answer, tot, friends, num_answer)
-        print num_answer[0]
+        print "Total Number of Answer is %d"  % num_answer[0]
 
 
