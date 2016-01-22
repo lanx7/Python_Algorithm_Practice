@@ -32,3 +32,4 @@ Python Algorithm Practice
  * Output
     - Number of answers
 
+6. Traveling Salesman Problem (Exhaustive Search for Optimal Solution)
