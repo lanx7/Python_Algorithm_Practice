@@ -17,9 +17,8 @@ Python Algorithm Practice
  * Two students in a pair should be friends
  * Input:picnic_input.txt
 	Number of Test case
-	Case1: Number of Students, Number of Friends pair
-	Case1: List of Friends Pair	
-	Case2: ...
+	- Number of Students, Number of Friends pair
+	- List of Friends Pair	
 
  * Output 
 
@@ -32,4 +31,11 @@ Python Algorithm Practice
  * Output
     - Number of answers
 
-6. Traveling Salesman Problem (Exhaustive Search for Optimal Solution)
+6. ClockSync (Exhaustive Search + Optimization)
+  4 * 4 clocks are given. Each of the clock points 3,6,9 or 12:00.  
+ * Input: 
+   - Number of Test Case
+   - Time of clocks   
+ * Output:
+   - Minimum operation of switch 
+   
